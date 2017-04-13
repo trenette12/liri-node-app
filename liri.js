@@ -34,7 +34,7 @@ function twitterStatus() {
 function spotifySong(){
 	var spotify = require('spotify');
 	var track = process.argv[3];
-	spotify.search({type: 'track', query: track}, function(error,data) {
+	spotify.search({type: 'track', query: track, limit: 10}, function(error,data) {
 		if (!error) {
 			console.log("-----------------------------------------------------------");
 			console.log(data.tracks.items);			
